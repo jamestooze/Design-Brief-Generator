@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Brief Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    #brief {
+      font-size: 4em;
+      margin: 40px 0;
+    }
+    .highlight {
+      background-color: yellow;
+      color: black;
+      padding: 0 5px;
+      border-radius: 5px;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      background-color: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    .instructions {
+      font-size: 1.5em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Design Brief Generator</h1>
+  <div id="brief">🎰 Generating brief...</div>
+  <button onclick="generateBrief()">Generate Brief</button>
+  <div class="instructions">
+    <strong>Instructions:</strong><br>
+    Work in your group use brief above provided to:<br>
+    A) discuss a wide range of ideas and then<br>
+    B) collaborate to produce 3 concepts that address the brief.<br>
+    Each concept should be presented on an A3 piece of paper (landscape), include a concept name, and the brief it was in response to.<br>
+    Use sketching and annotation to present the concept clearly, maximising the impact and understanding.
+  </div>
+
+  <script>
+    const forms = ["Modular", "Inflatable", "Transparent", "Foldable", "Miniature", "Robust", "Wearable", "Pocket-sized", "Textured", "Durable", "Interlocking", "Soft", "Rigid", "Reflective", "Lightweight"];
+    const uses = ["Navigation", "Storage", "Communication", "Illumination", "Protection", "Measurement", "Cooking", "Cleaning", "Display", "Charging", "Sports", "Entertainment", "Transport", "Gardening", "Monitoring"];
+    const experiences = ["Surprising", "Comforting", "Playful", "Immersive", "Safe", "Delightful", "Disorientating", "Fun", "Empowering", "Intense", "Nostalgic", "Educational", "Enabling", "Collaborative", "Efficient"];
+    const users = ["Chef", "Commuter", "Parent", "Athlete", "Tourist", "Remote worker", "Cleaner", "Delivery Driver", "Designer", "Explorer", "Patient", "Maker", "Performer", "Teacher", "Gamer"];
+
+    function getRandomWord(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function animateBrief() {
+      const briefDiv = document.getElementById("brief");
+      let startTime = Date.now();
+      let duration = 4000; // 4 seconds total animation
+      let interval = setInterval(() => {
+        let form = getRandomWord(forms);
+        let use = getRandomWord(uses);
+        let experience = getRandomWord(experiences);
+        let user = getRandomWord(users);
+        briefDiv.innerHTML = `${form} ${use} device that provides a ${experience} experience for a ${user}.`;
+        if (Date.now() - startTime > duration) {
+          clearInterval(interval);
+          let finalForm = getRandomWord(forms);
+          let finalUse = getRandomWord(uses);
+          let finalExperience = getRandomWord(experiences);
+          let finalUser = getRandomWord(users);
+          briefDiv.innerHTML = `<span id="form">${finalForm}</span> <span id="use">${finalUse}</span> device that provides a <span id="experience">${finalExperience}</span> experience for a <span id="user">${finalUser}</span>.`;
+          highlightKeywords();
+        }
+      }, 100);
+    }
+
+    function highlightKeywords() {
+      setTimeout(() => {
+        document.getElementById("form").classList.add("highlight");
+        setTimeout(() => {
+          document.getElementById("use").classList.add("highlight");
+          setTimeout(() => {
+            document.getElementById("experience").classList.add("highlight");
+            setTimeout(() => {
+              document.getElementById("user").classList.add("highlight");
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    }
+
+    function generateBrief() {
+      document.getElementById("brief").innerHTML = "🎰 Generating brief...";
+      animateBrief();
+    }
+  </script>
+</body>
+</html>
