@@ -50,15 +50,15 @@
   <button onclick="generateBrief()" style="font-size: 2em; padding: 1em 2em;">Create A Brief</button>
   <div class="instructions">
     <strong>Instructions:</strong><p>
-   In your group use brief above provided to generate multiple alternative concepts (one concept for each member of the group) that address it.<p> Start by considering the context that the device will be used in. What might your user need the device for? How might the form enable this? How might the experience shape the outcome?<p> To create the different ideas it is worth either thinking about different variations of your user (different types of shop worker, for example), the context they work in (clothing, food, etc) and/or variations of the device (different types of container for example).</p> Discuss a wide range of ideas and work together to create and communicate the concepts that address the brief.<p> Each of the concepts should be presented on an A3 piece of paper (landscape), include a concept name, and the brief it was in response to.<p>
+   In your group use brief above provided to generate multiple alternative concepts (one concept for each member of the group) that address it.<p> Start by writing a list of simalies and variations for each of your briefs key words (in yellow).</p> Next, when you have a user in mind consider the context that the device will be used in. What might your user need the device for? How might the form enable this? How might the experience shape the outcome?<p> Discuss a wide range of ideas and work together to create and communicate the concepts that address the brief.<p> Each of the concepts should be presented on an A3 piece of paper (landscape), include a concept name, and the brief it was in response to.<p>
     Use sketching and annotation to present the concept clearly, maximising the impact and understanding.
   </div>
 
   <script>
-    const forms = ["Modular", "Inflatable", "Transparent", "Foldable", "Miniature", "Robust", "Wearable", "Pocket-sized", "Textured", "Durable", "Interlocking", "Soft", "Rigid", "Reflective", "Lightweight"];
+    const forms = ["Modular", "Inflatable", "Transparent", "Foldable", "Miniature", "Robust", "Wearable", "Pocket-sized", "Textured", "Durable", "Interlocking", "Soft", "Rigid", "High-Viz", "Lightweight"];
     const uses = ["Navigation", "Storage", "Communication", "Illumination", "Protection", "Measurement", "Cooking", "Cleaning", "Display", "Charging", "Sports", "Entertainment", "Transport", "Gardening", "Monitoring"];
-    const experiences = ["Surprising", "Comforting", "Playful", "Immersive", "Safe", "Delightful", "Disorientating", "Fun", "Empowering", "Intense", "Nostalgic", "Educational", "Enabling", "Collaborative", "Efficient"];
-    const users = ["Chef", "Commuter", "Parent", "Athlete", "Tourist", "Remote worker", "Cleaner", "Delivery Driver", "Designer", "Explorer", "Patient", "Maker", "Performer", "Teacher", "Gamer"];
+    const experiences = ["Surprising", "Comfortable", "Playful", "Connected", "Safe", "Delightful", "Informative", "Fun", "Empowering", "Reasuring", "Nostalgic", "Educational", "Enabling", "Collaborative", "Efficient"];
+    const users = ["Chef", "Office Worker", "Parent", "Athlete", "Tourist", "Emergency Responder", "Cleaner", "Delivery Driver", "Gardener", "Explorer", "Cyclist", "Maker", "Performer", "Teacher", "Gamer"];
 
     function getRandomWord(list) {
       return list[Math.floor(Math.random() * list.length)];
